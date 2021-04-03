@@ -1,0 +1,9 @@
+class Solution(object):
+    def kidsWithCandies(self, candies, extraCandies):
+        """
+        :type candies: List[int]
+        :type extraCandies: int
+        :rtype: List[bool]
+        """
+        greatest_ = max(candies) - extraCandies
+        return [x >= greatest_ for x in candies]
