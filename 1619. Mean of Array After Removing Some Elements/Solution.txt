@@ -1,0 +1,12 @@
+class Solution(object):
+    def trimMean(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: float
+        """
+        #start = int(math.ceil(0.05*len(arr)))
+        #end = len(arr)-start
+        arr.sort()
+        return float(sum(arr[int(math.ceil(0.05*len(arr))):(len(arr) - (int(math.ceil(0.05*len(arr)))))]))/(len(arr)-2*int(math.ceil(0.05*len(arr))))
+        #arr1 = arr[start:end]
+        #return float(sum(arr1))/(len(arr1))

@@ -1,0 +1,18 @@
+class Solution(object):
+    def flipAndInvertImage(self, image):
+        """
+        :type image: List[List[int]]
+        :rtype: List[List[int]]
+        """
+		#create a variable to store the result
+        result = []
+		#create a variable for storing the number of elements in each sublist as we need it later, saving some computation time, by declaring it as a constant
+        length = len(image[0])
+		#looping through each pixel in the images list
+        for pixel in image:
+		#mapping each element in the pixel with xor of 1, ^1, because it returns the opposite of 0,1!
+		#We also reverse the list by slicing
+          temp = map(operator.xor,pixel,[1]*length)[::-1]
+		  #Add each sublist in the desired formate in the result list
+          result.append(temp)
+        return result
